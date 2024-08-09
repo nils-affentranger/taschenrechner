@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing.Text;
 using System.Globalization;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Taschenrechner.WinForms {
+namespace Taschenrechner.Business {
 
-    internal class Calculator {
+    public class Calculator {
         private bool lastActionWasEvaluation;
         private readonly List<Token> currentCalculation;
 
@@ -21,7 +17,7 @@ namespace Taschenrechner.WinForms {
         public bool AddCharacter(string character) {
             if (IsValidCharacter(character)) {
                 if (lastActionWasEvaluation) {
-                    if (IsOperator(character)) {
+                    if (IsOperator(character) || IsParenthesis(character)) {
                         lastActionWasEvaluation = false;
                     }
                     else {

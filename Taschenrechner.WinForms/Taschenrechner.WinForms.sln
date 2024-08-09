@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.10.35013.160
+VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taschenrechner.WinForms", "Taschenrechner.WinForms\Taschenrechner.WinForms.csproj", "{23E9795C-4218-4DA3-B8E6-9B4B870A0312}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taschenrechner.WinForms", "Taschenrechner.WinForms.csproj", "{23E9795C-4218-4DA3-B8E6-9B4B870A0312}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BCF1DC7F-A20B-45EB-86C0-AF287B16C7BD}
+		SolutionGuid = {E46D7A7B-FEBB-4702-B9B1-258AC07BF0F7}
 	EndGlobalSection
 EndGlobal

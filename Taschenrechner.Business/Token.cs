@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System;
 
-namespace Taschenrechner {
+namespace Taschenrechner.Business {
 
     public class Token {
 
