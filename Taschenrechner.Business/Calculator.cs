@@ -37,11 +37,13 @@ namespace Taschenrechner.Business {
                     }
                 }
                 else if (IsParenthesis(character)) {
-                    var lastToken = currentCalculation[currentCalculation.Count - 1];
-                    if (lastToken.Type == Token.TokenType.Number && character == "(") {
-                        currentCalculation.Add(new Token("*", true));
+                    if (currentCalculation.Any()) {
+                        var lastToken = currentCalculation[currentCalculation.Count - 1];
+                        if (lastToken.Type == Token.TokenType.Number && character == "(") {
+                            currentCalculation.Add(new Token("*", true));
+                        }
+                        currentCalculation.Add(new Token(character, false, true));
                     }
-                    currentCalculation.Add(new Token(character, false, true));
                 }
                 else {
                     if (currentCalculation.Count > 0 && currentCalculation[currentCalculation.Count - 1].Type == Token.TokenType.Number) {
@@ -230,7 +232,7 @@ namespace Taschenrechner.Business {
         }
 
         private string FormatNumber(double number) {
-            bool useScientific = Math.Abs(number) >= 1e15 || Math.Abs(number) < 1e-2;
+            bool useScientific = Math.Abs(number) >= 1e14 || Math.Abs(number) < 1e-2;
             string format = useScientific ? "E" : "N";
             int decimalPlaces = GetDecimalPlaces(number);
             var nfi = new NumberFormatInfo { NumberGroupSeparator = "'", NumberDecimalDigits = decimalPlaces };
