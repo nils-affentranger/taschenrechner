@@ -1,0 +1,20 @@
+# Development Dockerfile for hot reloading
+FROM node:18-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the source code
+COPY . .
+
+# Expose port 4200
+EXPOSE 4200
+
+# Start the Angular development server
+CMD ["npm", "start", "--", "--host", "0.0.0.0", "--poll", "2000"]
